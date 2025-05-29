@@ -46,7 +46,7 @@ class ListingPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => DetailPage()),
+                      MaterialPageRoute(builder: (context) => DetailPage(postId: post.id)),
                     );
                   },
                   child: Column(
@@ -77,7 +77,7 @@ class ListingPage extends StatelessWidget {
                                   style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                                 ),
                                 Text(
-                                  post.body.replaceAll('\n', ' '),
+                                  post.body.replaceAll('\n', ' ').capitalize(),
                                   style: const TextStyle(fontSize: 14, color: Color(0xFF436a97)),
                                   maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
